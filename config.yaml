@@ -1,0 +1,14 @@
+ENV: "dev"
+PORT: "8080"
+POSTGRES:
+  HOST: "host.docker.internal" 
+  PORT: "5432"
+  USER: "root"
+  PASSWORD: "my-secret-pw"
+  DATABASE: "go_todo"
+JWT:
+  SECRET_KEY: "verysecret"
+REDIS:
+  HOST: "localhost"
+  PORT: "6379"
+  PASSWORD: ""

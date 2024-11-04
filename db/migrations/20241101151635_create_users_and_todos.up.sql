@@ -1,0 +1,21 @@
+BEGIN;
+
+CREATE TABLE IF NOT EXISTS users (
+    id BIGSERIAL PRIMARY KEY,
+    username VARCHAR(255) NOT NULL,
+    password VARCHAR(255) NOT NULL,
+    role VARCHAR(255) NOT NULL,
+    full_name VARCHAR(255) NOT NULL
+);
+
+CREATE TABLE IF NOT EXISTS todos (
+    id BIGSERIAL PRIMARY KEY,
+    user_id BIGINT NOT NULL,
+    title VARCHAR(255) NOT NULL,
+    content VARCHAR(255),
+    due_date TIMESTAMP,
+    completed BOOLEAN NOT NULL,
+    FOREIGN KEY (user_id) REFERENCES users(id)
+);
+
+COMMIT;
